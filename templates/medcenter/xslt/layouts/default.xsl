@@ -364,7 +364,7 @@
 													<xsl:with-param name="alt" select="$conf//property[@name='company_name']/value" />
 												</xsl:call-template>
 			                                </span>
-			                                <span class="name" umi:field-name="company_name" umi:object-id="{$conf//object/@id}">
+			                                <span class="name footer_name" umi:field-name="company_name" umi:object-id="{$conf//object/@id}">
 												<xsl:value-of select="$conf//property[@name='company_name']/value"/>
 			                                </span>
 			                                <span umi:field-name="slogan" umi:object-id="{$conf//object/@id}">

@@ -393,6 +393,9 @@ a.border:hover:after{
   font: 24px/30px 'cleanvertising_light';
   color: #ed145b;
 }
+.footer_name{
+    font-size: 20px;
+}
 .contacts{
   padding: 0 15px;
   margin: 10px 0;
