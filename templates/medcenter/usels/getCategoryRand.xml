@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selection>
+	<target result="pages">
+		<type module="catalog" method="category" />
+		<category depth="2">{1}</category>
+	</target>
+	<sort>rand()</sort>
+	<limit >{2}</limit>
+	<extended>
+		<properties>h1, header_pic</properties>
+	</extended>
+</selection>

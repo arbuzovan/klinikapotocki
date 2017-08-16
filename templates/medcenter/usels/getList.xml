@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selection>
+	<target expected-result="objects">
+	  <type id="{1}"/>
+	</target>
+</selection>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selection>
+	<target result="pages">
+		<type module="catalog" method="category" />
+		<category depth="2">{1}</category>
+	</target>
+	<extended>
+		<properties>h1</properties>
+	</extended>
+</selection>

@@ -1,0 +1,202 @@
+
+@media (min-width: 768px){
+  /*FANCYBOX*/
+  .fancybox-close {
+    position: absolute !important;
+    top: 0 !important;
+    right: -50px !important;
+    width: 29px !important;
+    height: 29px !important;
+    cursor: pointer !important;
+    z-index: 8040 !important;
+    background-image: url('/templates/medcenter/images/fancy_sprite.png') !important;
+    background-position: 0 0 !important;
+    background-repeat: no-repeat !important;
+    opacity: .8;
+  }
+
+  .fancybox-close:hover, .fancybox-next span:hover, .fancybox-prev span:hover{
+    opacity: 1;
+  }
+
+  .fancybox-nav span {
+    position: absolute !important;
+    top: 50% !important;
+    width: 28px !important;
+    height: 85px !important;
+    margin-top: -42px !important;
+    cursor: pointer !important;
+    z-index: 8040 !important;
+    /*visibility: hidden !important;*/
+    background-image: url('/templates/medcenter/images/fancy_sprite.png') !important;
+    background-position: -29px 0 !important;
+    background-repeat: no-repeat !important;
+    opacity: .8;
+  }
+
+  .fancybox-next{
+    right: -80px  !important;
+  }
+
+  .fancybox-prev{
+    left: -80px  !important;
+  }
+
+  .fancybox-next span {
+    background-position: -57px 0  !important;
+  }
+
+  .fancybox-prev span {
+    background-position: -29px 0  !important;
+  }
+  /*FANCYBOX*/
+  .navbar-nav{
+    float: none;
+    display: inline-block;
+  }
+   .contacts{
+    text-align: right;
+   }
+  .banner-content{
+    width: 60%;
+    margin-left: 100px;
+  }
+}
+@media (min-width: 992px) {
+  body {
+    margin-bottom: 270px;
+  }
+  .navbar-nav{
+    margin: 20px 0 0;
+    float: right;
+  }
+  .top-panel .btn{
+    margin: 0;
+  }
+  .banner-content{
+    width: 40%;
+  }
+  .footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar{
+    text-align: center;
+  }
+  .sm-c{
+    text-align: center;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+@media (min-width: 1200px) {
+  .navbar li > a{
+    padding: 15px 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  /*GO TOP*/
+#go_top{ 
+  width: 50px;
+  height: 50px;
+
+}
+#go_top:before, #go_top:after{
+   width: 20px;
+  height: 2px;
+  top: 24px;
+  transition: all .2s ease-out .2s;
+}
+#go_top:before{
+  left: 7px;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#go_top:after{
+  right: 8px;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#go_top:hover{
+  border: 2px solid #ed145b;
+  border-right: none;
+}
+#go_top:hover:before, #go_top:hover:after{
+  background: #ed145b;
+}
+   #forget .forget_password li{
+  width:100%;
+  display: block;
+  
+}
+  .btn_login {
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+  #forget input[type="text"]{  
+  width:100%;
+  margin-top:15px;
+}
+  h1, .h1{
+    font-size: 25px;
+  }
+  .xs-c, .mob-c{
+    text-align: center;
+  }
+  .navbar{
+    text-align: left;
+  }
+  .navbar li > a{
+    display: block;
+    padding: 0;
+    line-height: 40px;
+    border-bottom: 1px solid #2a72a8;
+  }
+  .navbar li > a:hover,
+  .navbar .active > a,
+  .navbar .active > a:hover,
+  .navbar .active > a:focus{
+    border-bottom: 1px solid #ed145b;
+  }
+  .carousel-control .glyphicon {
+    position: absolute;
+    top: 100%;
+    margin-top: -45px;
+    z-index: 5;
+  }
+  .tile-3>li, .tile-4>li{
+    width: 80%;
+  }
+  .footer-menu{
+    display: inline;
+  }
+  .footer-menu li{
+    display: inline-block;
+    margin-right: 15px;
+  }
+  .vert-divider:before, .vert-divider:after{
+    content: none;
+  }
+  .m-w80{
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .img-left{
+    float: none;
+    /*width: 80%;*/
+    margin-right: 0;
+  }
+}

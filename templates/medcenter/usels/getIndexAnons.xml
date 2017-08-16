@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selection>
+	<target result="pages">
+			<type module="news" method="item" />
+			<category depth="2">{1}</category>
+	</target>
+	<sort order="descending">publish_time</sort>
+	<limit page="0">{2}</limit>
+</selection>
