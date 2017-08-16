@@ -33,7 +33,7 @@
                     <xsl:call-template name="price">
                     	<xsl:with-param name="price" select="//property[@name='price']/value"/>
                     </xsl:call-template>
-                </span><xsl:text> руб.</xsl:text>
+                </span><xsl:text> zł.</xsl:text>
             </span>
 
             <div class="window-wrap">

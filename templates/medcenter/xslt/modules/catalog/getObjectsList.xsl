@@ -80,7 +80,7 @@
                     <xsl:call-template name="price">
                     	<xsl:with-param name="price" select="$page//property[@name='price']/value"/>
                     </xsl:call-template>
-                </span><xsl:text> руб.</xsl:text>
+                </span><xsl:text> zł.</xsl:text>
 
          	</td>
         </tr>
