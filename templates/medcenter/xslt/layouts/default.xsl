@@ -43,6 +43,7 @@
 
 			        <!-- MINIFY -->
 			        <link type="text/css" rel="stylesheet" href="/min/b=templates/medcenter/css&amp;f=bootstrap.css,chosen.css,jquery-ui.css,style.css,mediaqueries.css" />
+                                <link type="text/css" rel="stylesheet" href="/templates/medcenter/css/custom.css" />
 			        <!-- END MINIFY -->
 
 					<!-- <base href="http://{concat(result/@domain, result/@request-uri)}"/> -->
@@ -86,7 +87,7 @@
 				                    	<xsl:apply-templates select="document('udata://search/insert_form')/udata"/>
 				                    </div>
 				                    <div class="col-md-3 xs-c sm-c text-right">
-				                        <a href="#order" class="btn scroll" umi:field-name="btn_value" umi:object-id="{$conf//object/@id}">
+				                        <a id="orderBtn" href="#order" class="btn scroll" umi:field-name="btn_value" umi:object-id="{$conf//object/@id}">
 				                        	<xsl:value-of select="$conf//property[@name='btn_value']/value" />
 				                        </a>
 				                    </div>
@@ -103,8 +104,8 @@
 												<xsl:call-template name="makeThumbnail">
 													<xsl:with-param name="object_id" select="$conf//object/@id" />
 													<xsl:with-param name="field_name">logo</xsl:with-param>
-													<xsl:with-param name="width">150</xsl:with-param>
-													<xsl:with-param name="height">60</xsl:with-param>
+													<xsl:with-param name="width">110</xsl:with-param>
+													<xsl:with-param name="height">110</xsl:with-param>
 													<xsl:with-param name="alt" select="$conf//property[@name='company_name']/value" />
 												</xsl:call-template>
 			                                </span>
@@ -365,7 +366,7 @@
 												</xsl:call-template>
 			                                </span>
 			                                <span class="name footer_name" umi:field-name="company_name" umi:object-id="{$conf//object/@id}">
-												<xsl:value-of select="$conf//property[@name='company_name']/value"/>
+												<xsl:value-of select="$conf//property[@name='footer_company_name']/value"/>
 			                                </span>
 			                                <span umi:field-name="slogan" umi:object-id="{$conf//object/@id}">
 												<xsl:value-of select="$conf//property[@name='slogan']/value" />
