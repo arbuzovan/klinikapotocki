@@ -1,0 +1,56 @@
+/*
+    Кнопки - 
+
+*/
+
+#orderBtn{
+    background: #000 !important;
+    border-color: #000 !important;
+}
+
+#orderBtn:hover{
+    background-color: #fff !important;
+    color:#000 !important;
+}
+
+.btn{
+    background: #b0002c !important;
+    border-color: #b0002c !important;
+}
+
+.btn:hover{
+    background-color: #fff !important;
+    color:#b0002c !important;
+}
+
+.name {
+    color: #b0002c;
+}
+
+.banner-caption{
+    color: #b0002c;
+}
+
+.navbar li>a {
+    border-bottom: 4px solid #BE9655;
+}
+
+.navbar li > a:hover, .navbar .active > a, .navbar .active > a:hover, .navbar .active>a:focus {
+    box-shadow: none;
+    border-bottom: 4px solid #b0002c;
+}
+
+.bx-controls-direction a{
+    background: #BE9655;
+}
+.bx-controls-direction a:hover {
+    background: #b0002c;
+}
+
+.doctor-specialization{
+    background: #BE9655;
+}
+
+specialization:before, .doctor-specialization:after {
+    background: #BE9655;
+}
