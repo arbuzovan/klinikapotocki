@@ -64,7 +64,7 @@
 				<body>
 					<xsl:value-of select="$conf//property[@name='manager_google']/value" disable-output-escaping="yes"/>
 					<header itemscope="itemscope" itemtype="http://schema.org/LocalBusiness">
-				        <div class="top-panel">
+				        <div class="top-panel" style="background:{$conf//property[@name='top-panel-color']/value}">
 				            <div class="container">
 				                <div class="row">
 				                    <div class="col-md-5 xs-c sm-c">
@@ -196,7 +196,7 @@
 			            <div class="row">
 			                <div class="col-md-3">
 			                    <div class="mb30">
-			                        <div class="block-caption">
+			                        <div class="block-caption" style="background:{$conf//property[@name='block-caption-color']/value}">
 			                            <a href="{document(concat('udata://content/get_page_url/', $activitiesId,'/'))/udata}" class="activities" umi:element-id="{$activitiesId}" umi:field-name="name">
 											<xsl:value-of select="document(concat('upage://', $activitiesId))//udata//page/name"/>
 			                            </a>
@@ -207,7 +207,7 @@
 			                    <!-- SHARES -->
 								<xsl:if test="not($pageId = $main)">
 				                    <div class="mb30">
-				                        <div class="block-caption">
+				                        <div class="block-caption" style="background:{$conf//property[@name='block-caption-color']/value}">
 				                            <a href="{document(concat('udata://content/get_page_url/', $sharesId,'/'))/udata}" class="shares" umi:element-id="{$sharesId}" umi:field-name="h1">
 												<xsl:value-of select="document(concat('upage://', $sharesId, '.h1'))//udata//value"/>
 				                            </a>
@@ -218,7 +218,7 @@
 
 			                    <!-- ARTICLES -->
 			                    <div class="mb30">
-			                        <div class="block-caption">
+			                        <div class="block-caption" style="background:{$conf//property[@name='block-caption-color']/value}">
 			                            <a href="{document(concat('udata://content/get_page_url/', $articlesId,'/'))/udata}" class="articles" umi:element-id="{$articlesId}" umi:field-name="h1">
 											<xsl:value-of select="document(concat('upage://', $articlesId, '.h1'))//udata//value"/>
 			                            </a>
@@ -341,7 +341,7 @@
 				                    <div class="h2" id="order" umi:object-id="{$conf//object/@id}" umi:field-name="form_title">
 										<xsl:value-of select="$conf//property[@name='form_title']/value" />
 				                    </div>
-				                    <div class="border form">
+				                    <div class="border form" style="border-color:{$conf//property[@name='border-color']/value}">
 				                    	<xsl:apply-templates select="document('udata://webforms/add/medcenter/')//udata" />
 				                    </div>
 								</xsl:if>

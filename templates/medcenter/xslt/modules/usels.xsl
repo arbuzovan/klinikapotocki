@@ -82,7 +82,7 @@
         <li umi:element-id="{@id}" umi:region="row" umi:field-name="name" umi:empty="&empty-section-name;" umi:delete="delete">
             <figure>
             	<xsl:variable name="page" select="document(concat('upage://', @id))//udata"/>
-                <a href="{@link}" rel="nofollow" class="border">
+                <a href="{@link}" rel="nofollow" class="border" style="border-color:{$conf//property[@name='border-color']/value}">
                     <img class="full" alt="{$page//property[@name='h1']/value}" src="{document(concat('udata://system/makeThumbnailFull/(',substring($page//property[@name='header_pic']/value,2),')/400/300'))//src}"/>
                 </a>
                 <figcaption>

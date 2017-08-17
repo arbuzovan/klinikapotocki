@@ -46,7 +46,7 @@
 
 	                <div class="btn-close"></div>
 
-	                <div class="border form">
+	                <div class="border form" style="border-color:{$conf//property[@name='border-color']/value}">
 	                	<xsl:apply-templates select="document('udata://webforms/add/medcenter/')//udata" >
 	                		<xsl:with-param name="formType" select="'window'"/>
 	                	</xsl:apply-templates>
