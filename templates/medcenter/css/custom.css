@@ -54,3 +54,9 @@
 specialization:before, .doctor-specialization:after {
     background: #BE9655;
 }
+
+.zebra td, .content table td, .zebra th, .content table th{
+    word-wrap: break-word;
+    word-break: normal; /* для Opera и FireFox */
+    word-break: keep-all; /* для Chrome */
+}
