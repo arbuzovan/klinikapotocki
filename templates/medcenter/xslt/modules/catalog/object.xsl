@@ -29,11 +29,14 @@
         <div class="mob-c">
             <span class="price">
                 <span>Стоимость обследования:</span>&nbsp;
+                <xsl:if test="$page//property[@name='from_label']/value" >
+                    <span class="prince_from_label">от</span>&nbsp;
+                </xsl:if>
                 <span class="big-text" umi:field-name="price" umi:element-id="{$pageId}">
                     <xsl:call-template name="price">
                     	<xsl:with-param name="price" select="//property[@name='price']/value"/>
                     </xsl:call-template>
-                </span><xsl:text> zł.</xsl:text>
+                </span><xsl:text>&nbsp;zł.</xsl:text>
             </span>
 
             <div class="window-wrap">

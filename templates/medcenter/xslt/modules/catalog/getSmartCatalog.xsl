@@ -17,6 +17,7 @@
         <div class="content" umi:element-id="{$pageId}" umi:field-name="descr">
             <xsl:value-of select="$page//property[@name='descr']/value" disable-output-escaping="yes"/>
         </div>
+        <div class="clear"></div>
 
         <!-- GALLERY -->
         <xsl:for-each select="document(concat('udata://photoalbum/albums////',$pageId))/udata//items/item">
@@ -87,11 +88,14 @@
             	</a>
             </td>
             <td>
+                <xsl:if test="$page//property[@name='from_label']/value" >
+                    <span class="prince_from_label">от</span>&nbsp;
+                </xsl:if>
                 <span umi:field-name="price" umi:element-id="{@id}">
                     <xsl:call-template name="price">
                     	<xsl:with-param name="price" select="$page//property[@name='price']/value"/>
                     </xsl:call-template>
-                </span><xsl:text> zł.</xsl:text>
+                </span><xsl:text>&nbsp;zł.</xsl:text>
 
          	</td>
         </tr>
