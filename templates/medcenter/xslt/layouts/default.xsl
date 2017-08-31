@@ -360,8 +360,8 @@
 												<xsl:call-template name="makeThumbnail">
 													<xsl:with-param name="object_id" select="$conf//object/@id" />
 													<xsl:with-param name="field_name">logo_footer</xsl:with-param>
-													<xsl:with-param name="width">60</xsl:with-param>
-													<xsl:with-param name="height">50</xsl:with-param>
+													<xsl:with-param name="width">70</xsl:with-param>
+													<xsl:with-param name="height">auto</xsl:with-param>
 													<xsl:with-param name="alt" select="$conf//property[@name='company_name']/value" />
 												</xsl:call-template>
 			                                </span>
@@ -379,7 +379,7 @@
 											</span>
 											<xsl:text> </xsl:text>
 											<span umi:object-id="{$conf//object/@id}" umi:field-name="company_name">
-												<xsl:value-of select="$conf//property[@name='company_name']/value"/>
+												<xsl:value-of select="$conf//property[@name='footer_company_name']/value"/>
 											</span>
 										</div>
 			                        </div>
@@ -490,7 +490,7 @@
 										</span>
 										<xsl:text> </xsl:text>
 										<span umi:object-id="{$conf//object/@id}" umi:field-name="company_name">
-											<xsl:value-of select="$conf//property[@name='company_name']/value"/>
+											<xsl:value-of select="$conf//property[@name='footer_company_name']/value"/>
 										</span>
 									</div>
 								</div>

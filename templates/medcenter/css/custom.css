@@ -4,13 +4,13 @@
 */
 
 #orderBtn{
-    background: #000 !important;
-    border-color: #000 !important;
+    background: #B0002C !important;
+    border-color: #B0002C !important;
 }
 
 #orderBtn:hover{
     background-color: #fff !important;
-    color:#000 !important;
+    color:#B0002C !important;
 }
 
 .btn{
@@ -59,4 +59,20 @@ specialization:before, .doctor-specialization:after {
     word-wrap: break-word;
     word-break: normal; /* для Opera и FireFox */
     word-break: keep-all; /* для Chrome */
+}
+
+.border{
+    border: 5px solid #be9655;
+}
+
+.border:hover{
+    border: 5px solid #be9655;
+}
+
+.carousel-indicators li.active, .carousel-indicators li:hover {
+    background: #B0002C none repeat scroll 0 0;
+}
+
+.carousel-indicators li{
+    background: #be9655 none repeat scroll 0 0;
 }
