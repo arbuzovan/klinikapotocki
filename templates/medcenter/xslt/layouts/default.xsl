@@ -53,6 +53,10 @@
 						&lt;script src="/templates/medcenter/js/html5shiv.js"&gt;&lt;/script&gt;
 						&lt;![endif]--&gt;
 					</xsl:text>
+                                        
+                                        <xsl:text disable-output-escaping="yes">
+                                                &lt;!-- Google Tag Manager --&gt;&lt;script&gt;(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NGKQDKR');&lt;/script&gt;&lt;!-- End Google Tag Manager --&gt;&lt;!-- Google Tag Manager (noscript) --&gt;&lt;noscript&gt;&lt;iframe src=&quot;https://www.googletagmanager.com/ns.html?id=GTM-NGKQDKR&quot; height=&quot;0&quot; width=&quot;0&quot; style=&quot;display:none;visibility:hidden&quot;&gt;&lt;/iframe&gt;&lt;/noscript&gt;&lt;!-- End Google Tag Manager (noscript) --&gt;
+                                        </xsl:text>
 
 					<!-- Быстрое редактирование -->
 				    <xsl:value-of select="document('udata://system/includeQuickEditJs')/udata" disable-output-escaping="yes"/>
