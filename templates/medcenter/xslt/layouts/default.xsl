@@ -44,6 +44,7 @@
 			        <!-- MINIFY -->
 			        <link type="text/css" rel="stylesheet" href="/min/b=templates/medcenter/css&amp;f=bootstrap.css,chosen.css,jquery-ui.css,style.css,mediaqueries.css" />
                                 <link type="text/css" rel="stylesheet" href="/templates/medcenter/css/custom.css" />
+                                <script src="https://use.fontawesome.com/a87166b1fc.js"></script>
 			        <!-- END MINIFY -->
 
 					<!-- <base href="http://{concat(result/@domain, result/@request-uri)}"/> -->
@@ -394,7 +395,18 @@
 											<xsl:value-of select="document(concat('upage://', $activitiesId, '.h1'))//udata//value"/>
 			                            </div>
 			                            <xsl:apply-templates select="document(concat('udata://content/menu/0/1/', $activitiesId))//udata" mode="menu_activities"/>
-
+                                                    <div class="footer-header" umi:element-id="{$activitiesId}" umi:field-name="h1">
+                                                        Мы в социальных сетях
+                                                    </div>
+                                                    <div>
+                                                        <a href="https://vk.com/klinikapotocki" target="_blank">
+                                                            <i class="fa fa-vk fa-2x" aria-hidden="true"></i>
+                                                        </a>
+                                                        &nbsp;
+                                                        <a href="https://www.facebook.com/%D0%9A%D0%BB%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0-%D0%9F%D0%BE%D1%82%D0%BE%D1%86%D0%BA%D0%B8-1747196675544822/" target="_blank">
+                                                            <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                                                        </a>
+                                                    </div>
 		                            <div class="clear"></div>
 			                        </div>
 			                        <div class="col-md-4 col-sm-4 vert-divider xs-c">
