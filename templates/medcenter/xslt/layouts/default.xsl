@@ -42,7 +42,7 @@
 					<link rel="stylesheet" href="{$template-resources}css/mediaqueries.css" /> -->
 
 			        <!-- MINIFY -->
-			        <link type="text/css" rel="stylesheet" href="/min/b=templates/medcenter/css&amp;f=bootstrap.css,chosen.css,jquery-ui.css,style.css,mediaqueries.css" />
+			        <link type="text/css" rel="stylesheet" href="/min/b=templates/medcenter/css&amp;f=bootstrap.css,chosen.css,jquery-ui.css,style.css,mediaqueries.css,before-after.css" />
                                 <link type="text/css" rel="stylesheet" href="/templates/medcenter/css/custom.css" />
                                 <script src="https://use.fontawesome.com/a87166b1fc.js"></script>
 			        <!-- END MINIFY -->
@@ -63,7 +63,7 @@
 				    <!-- <xsl:value-of select="document('udata://system/includeEditInPlaceJs')/udata" disable-output-escaping="yes"/> -->
 
 			        <!-- MINIFY -->
-			        <script type="text/javascript" src="/min/b=templates/medcenter/js&amp;f=bootstrap.js,jquery.form.js,jquery.maskedinput.js,jquery.scrollTo-1.4.3.1.js,chosen.jquery.min.js,jquery.tablesorter.min.js,jquery.bxslider.min.js,scripts.js"></script>
+			        <script type="text/javascript" src="/min/b=templates/medcenter/js&amp;f=bootstrap.js,jquery.form.js,jquery.maskedinput.js,jquery.scrollTo-1.4.3.1.js,chosen.jquery.min.js,jquery.tablesorter.min.js,jquery.bxslider.min.js,before-after.js,scripts.js"></script>
 			        <!-- END MINIFY -->
 				</head>
 
