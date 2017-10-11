@@ -51,7 +51,8 @@
 			<xsl:if test=".//property[@name='publish_pic']/value">
 				<xsl:variable name="slideImg" select="document(concat('udata://system/makeThumbnailFull/(',substring(.//property[@name='publish_pic']/value,2),')/1920/540/default/0/1/5/0/50'))//src" />
 
-		        <div class="item" style="background-image: url('{$template-resources}images/grid.png'), url('{$slideImg}');">
+		        <!--div class="item" style="background-image: url('{$template-resources}images/grid.png'), url('{$slideImg}');"-->
+		        <div class="item" style="background-image: url('{$slideImg}');">
 		        	<xsl:if test="position() = 1">
 		        		<xsl:attribute name="class">item active</xsl:attribute>
 		        	</xsl:if>
