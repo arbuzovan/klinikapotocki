@@ -28,7 +28,7 @@
 
         <div class="mob-c">
             <span class="price">
-                <span>Стоимость обследования:</span>&nbsp;
+                <span>Стоимость:</span>&nbsp;
                 <xsl:if test="$page//property[@name='from_label']/value" >
                     <span class="prince_from_label">от</span>&nbsp;
                 </xsl:if>
