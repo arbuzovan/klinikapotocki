@@ -238,6 +238,10 @@
 			                    		</xsl:otherwise>
 			                    	</xsl:choose>
 			                    </div>
+			                    <!-- ARTICLES -->
+			                    <div class="mb30 facebook_widget">
+                                                <xsl:value-of select="$conf//property[@name='facebook_widget']/value" disable-output-escaping="yes" />
+			                    </div>
 			                </div>
 			                <div class="col-md-9">
 								<!-- ACTIVITIES -->
