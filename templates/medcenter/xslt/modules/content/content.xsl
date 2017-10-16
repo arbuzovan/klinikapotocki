@@ -46,11 +46,15 @@
 			<xsl:value-of select="document(concat('upage://', $pageId, '.h1'))/udata//value"/>
 		</h1>
 
+		<div class="content" umi:field-name="content" umi:element-id="{$pageId}" umi:empty="&empty-page-content;">
+			<xsl:value-of select=".//property[@name = 'content']/value" disable-output-escaping="yes"/>
+		</div>
+
 		<div class="map">
 			<xsl:value-of select="$conf//property[@name='map']/value" disable-output-escaping="yes"/>
 		</div>
 
-		<div class="content" itemscope="itemscope" itemtype="http://schema.org/Organization">
+		<!--div class="content" itemscope="itemscope" itemtype="http://schema.org/Organization">
 			<h3 itemprop="name">
 				<xsl:value-of select="$conf//property[@name='company_name']/value"/>
 			</h3>
@@ -86,11 +90,9 @@
 					<xsl:value-of select="$conf//property[@name='email']/value" />
 				</a>
 			</p>
-		</div>
+		</div-->
 
-		<div class="content" umi:field-name="content" umi:element-id="{$pageId}" umi:empty="&empty-page-content;">
-			<xsl:value-of select=".//property[@name = 'content']/value" disable-output-escaping="yes"/>
-		</div>
+
 	</xsl:template>
 
 	<!-- PRICE PAGE -->
