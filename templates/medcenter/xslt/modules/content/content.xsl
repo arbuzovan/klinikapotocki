@@ -45,14 +45,33 @@
 		<h1 umi:element-id="{$pageId}" umi:field-name="h1">
 			<xsl:value-of select="document(concat('upage://', $pageId, '.h1'))/udata//value"/>
 		</h1>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="content" umi:field-name="content" umi:element-id="{$pageId}" umi:empty="&empty-page-content;">
+                                <xsl:value-of select=".//property[@name = 'content']/value" disable-output-escaping="yes"/>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="map">
+                                    <xsl:value-of select="$conf//property[@name='map']/value" disable-output-escaping="yes"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="content" umi:field-name="second_adress" umi:element-id="454" umi:empty="&empty-page-content;">
+                                <xsl:value-of select="$conf//property[@name = 'second_adress']/value" disable-output-escaping="yes"/>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="map">
+                                    <xsl:value-of select="$conf//property[@name='second_map']/value" disable-output-escaping="yes"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-		<div class="content" umi:field-name="content" umi:element-id="{$pageId}" umi:empty="&empty-page-content;">
-			<xsl:value-of select=".//property[@name = 'content']/value" disable-output-escaping="yes"/>
-		</div>
-
-		<div class="map">
-			<xsl:value-of select="$conf//property[@name='map']/value" disable-output-escaping="yes"/>
-		</div>
 
 		<!--div class="content" itemscope="itemscope" itemtype="http://schema.org/Organization">
 			<h3 itemprop="name">
