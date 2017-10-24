@@ -76,3 +76,11 @@ specialization:before, .doctor-specialization:after {
 .carousel-indicators li{
     background: #be9655 none repeat scroll 0 0;
 }
+
+body{
+    margin-bottom: 0px;
+}
+
+.footer{
+    position: relative;
+}

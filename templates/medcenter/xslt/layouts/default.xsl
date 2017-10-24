@@ -143,7 +143,7 @@
 		                                </nav>
 
 			                            <div class="contacts xs-c">
-			                                <span class="blue">Наш адрес: </span>
+			                                <span class="blue">Адрес клиники: </span>
 			                                <address itemprop="address" itemscope="itemscope" itemtype="http://schema.org/PostalAddress">
 			                                	<xsl:if test="$conf//property[@name='postalcode']/value">
 													<span itemprop="postalCode" umi:field-name="postalcode" umi:object-id="{$conf//object/@id}">
@@ -358,7 +358,7 @@
 			                </div>
 			            </div>
 			        </div>
-
+                                <div style="clear:both;"></div>
 			        <footer>
 			            <div class="footer">
 			                <div class="container">
@@ -463,6 +463,13 @@
 													<xsl:value-of select="$conf//property[@name='email']/value" />
 			                                    </a>
 											</xsl:if>
+                                                                                        
+                                                            <xsl:if test="$conf//property[@name='second_adress']/value">
+                                                                <xsl:value-of select="$conf//property[@name='second_adress']/value" disable-output-escaping="yes" />
+                                                                <br />
+                                                            </xsl:if>
+                                                                                        
+                                                                                        
 		                                </p>
 
 			                            <p>
