@@ -11,7 +11,7 @@
 		</h1>
 		<xsl:if test="document(concat('upage://', $pageId, '.header_pic'))/udata//value">
 			<a href="{document(concat('upage://', $pageId, '.header_pic'))/udata//value}" class="fancybox">
-				<img class="img-left" alt="{document(concat('upage://', $pageId, '.h1'))/udata//value}" src="{document(concat('udata://system/makeThumbnail/(',substring(document(concat('upage://',$pageId,'.header_pic'))//value,2),')/300/(auto)'))//src}"/>
+				<img class="img-left" title="{document(concat('upage://', $pageId, '.h1'))/udata//value}" alt="{document(concat('upage://', $pageId, '.h1'))/udata//value}" src="{document(concat('udata://system/makeThumbnail/(',substring(document(concat('upage://',$pageId,'.header_pic'))//value,2),')/300/(auto)'))//src}"/>
 			</a>
 		</xsl:if>
 		<div class="content" umi:field-name="content" umi:element-id="{$pageId}" umi:empty="&empty-page-content;">

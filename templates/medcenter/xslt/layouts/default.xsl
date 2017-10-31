@@ -76,13 +76,13 @@
 				                    <div class="col-md-5 xs-c sm-c">
 				                        <div class="phone">
 											<xsl:if test="$conf//property[@name='telephone']/value">
-			                                    <a class="phone-top" itemprop="telephone" umi:field-name="telephone" umi:object-id="{$conf//object/@id}" target="_blank" value="{$conf//property[@name='telephone']/value}" href="tel:{$conf//property[@name='telephone']/value}">
+			                                    <a class="phone-top" itemprop="telephone" umi:field-name="telephone" umi:object-id="{$conf//object/@id}" target="_blank" value="{$conf//property[@name='telephone']/value}" href="tel:{translate($conf//property[@name='telephone']/value, ' ', '')}">
 													<xsl:value-of select="$conf//property[@name='telephone']/value" />
 			                                    </a>
 											</xsl:if>
 											<xsl:if test="$conf//property[@name='telephone2']/value">
 					                            <span>  |  </span>
-			                                    <a class="phone-top" itemprop="telephone" umi:field-name="telephone2" umi:object-id="{$conf//object/@id}" target="_blank" value="{$conf//property[@name='telephone2']/value}" href="tel:{$conf//property[@name='telephone2']/value}">
+			                                    <a class="phone-top" itemprop="telephone" umi:field-name="telephone2" umi:object-id="{$conf//object/@id}" target="_blank" value="{$conf//property[@name='telephone2']/value}" href="tel:{translate($conf//property[@name='telephone2']/value, ' ', '')}">
 													<xsl:value-of select="$conf//property[@name='telephone2']/value" />
 			                                    </a>
 											</xsl:if>
@@ -204,7 +204,7 @@
 			                    <div class="mb30">
 			                        <div class="block-caption" style="background:{$conf//property[@name='block-caption-color']/value}">
 			                            <a href="{document(concat('udata://content/get_page_url/', $activitiesId,'/'))/udata}" class="activities" umi:element-id="{$activitiesId}" umi:field-name="name">
-											<xsl:value-of select="document(concat('upage://', $activitiesId))//udata//page/name"/>
+                                                        <xsl:value-of select="document(concat('upage://', $activitiesId))//udata//page/name"/>
 			                            </a>
 			                        </div>
 		                            <xsl:apply-templates select="document(concat('udata://content/menu/0/1/', $activitiesId))//udata" mode="aside"/>
@@ -231,16 +231,20 @@
 			                        </div>
 									<xsl:choose>
 										<xsl:when test="$pageId = $main">
-											<xsl:apply-templates select="document(concat('usel://getIndexAnons/', $articlesId))//udata" mode="index_anons"/>
+                                                                                    <xsl:apply-templates select="document(concat('usel://getIndexAnons/', $articlesId))//udata" mode="index_anons"/>
 										</xsl:when>
 										<xsl:otherwise>
-											<xsl:apply-templates select="document(concat('usel://getIndexAnons/', $articlesId, '/1'))//udata" mode="index_anons"/>
+                                                                                    <xsl:apply-templates select="document(concat('usel://getIndexAnons/', $articlesId, '/1'))//udata" mode="index_anons"/>
 			                    		</xsl:otherwise>
 			                    	</xsl:choose>
 			                    </div>
 			                    <!-- ARTICLES -->
 			                    <div class="mb30 facebook_widget">
                                                 <xsl:value-of select="$conf//property[@name='facebook_widget']/value" disable-output-escaping="yes" />
+			                    </div>
+                                            <br />
+			                    <div class="mb30 facebook_widget">
+                                                <xsl:value-of select="$conf//property[@name='vk_widget']/value" disable-output-escaping="yes" />
 			                    </div>
 			                </div>
 			                <div class="col-md-9">
@@ -349,7 +353,7 @@
 								<xsl:if test="not(result/@method = 'object' or $parentId = $doctorsId)">
 				                    <!-- ORDER -->
 				                    <div class="h2" id="order" umi:object-id="{$conf//object/@id}" umi:field-name="form_title">
-										<xsl:value-of select="$conf//property[@name='form_title']/value" />
+                                                        <xsl:value-of select="$conf//property[@name='form_title']/value" />
 				                    </div>
 				                    <div class="border form" style="border-color:{$conf//property[@name='border-color']/value}">
 				                    	<xsl:apply-templates select="document('udata://webforms/add/medcenter/')//udata" />
@@ -381,6 +385,11 @@
 												<xsl:value-of select="$conf//property[@name='slogan']/value" />
 			                                </span>
 			                            </a>
+			                            <p>
+			                                <a href="{document(concat('udata://content/get_page_url/', $sitemapId,'/'))/udata}" class="site-map" umi:element-id="{$sitemapId}" umi:field-name="h1">
+                                                            <xsl:value-of select="document(concat('upage://', $sitemapId, '.h1'))//udata//value"/>
+			                                </a>
+			                            </p>
 										<div class="copyright visible-xs-block">
 											<xsl:text>© </xsl:text>
 											<span umi:object-id="{$conf//object/@id}" umi:field-name="foundation_year">
@@ -391,6 +400,24 @@
 												<xsl:value-of select="$conf//property[@name='footer_company_name']/value"/>
 											</span>
 										</div>
+										<p class="designer_info">
+											<xsl:if test="$conf//property[@name='designer_logo']/value">
+												<span class="designer_logo">
+													<img alt="{$conf//property[@name='designer']/value}" src="{document(concat('udata://system/makeThumbnail/(',substring($conf//property[@name='designer_logo']/value,2),')/15/(auto)'))//src}"/>
+												</span>
+											</xsl:if>
+
+											<xsl:if test="$conf//property[@name='umi_prefix']/value">
+												<span umi:object-id='{$conf//object/@id}' umi:field-name='umi_prefix'>
+													<xsl:value-of select="$conf//property[@name='umi_prefix']/value"/>
+												</span>&nbsp;
+											</xsl:if>
+											<xsl:if test="$conf//property[@name='umi']/value">
+												<a href="{$conf//property[@name='umi_link']/value}" umi:object-id='{$conf//object/@id}' umi:field-name='umi'>
+													<xsl:value-of select="$conf//property[@name='umi']/value"/>
+												</a>
+											</xsl:if>
+										</p>
 			                        </div>
 			                        <div class="col-md-2 col-sm-2 vert-divider xs-c">
 			                            <div class="footer-header" umi:object-id="{$conf//object/@id}" umi:field-name="menu_footer_header">
@@ -406,14 +433,26 @@
                                                     <div class="footer-header" umi:element-id="{$activitiesId}" umi:field-name="h1">
                                                         Мы в социальных сетях
                                                     </div>
+                                                    <!--xsl:value-of select="$conf//property[@name='social_networks']/value" disable-output-escaping="yes"/-->
                                                     <div>
-                                                        <a href="https://vk.com/klinikapotocki" target="_blank">
+                                                        <a href="{$conf//property[@name='vk']/value}">
+                                                            <i class="fa fa-vk fa-2x" aria-hidden="true"></i>
+                                                        </a>
+                                                        &nbsp;
+                                                        <a href="{$conf//property[@name='fb']/value}">
+                                                            <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                                                        </a>
+                                                        &nbsp;
+                                                        <a href="{$conf//property[@name='youtube']/value}">
+                                                            <i class="fa fa-youtube fa-2x" aria-hidden="true"></i>
+                                                        </a>
+                                                        <!--a href="https://vk.com/klinikapotocki" target="_blank">
                                                             <i class="fa fa-vk fa-2x" aria-hidden="true"></i>
                                                         </a>
                                                         &nbsp;
                                                         <a href="https://www.facebook.com/%D0%9A%D0%BB%D0%B8%D0%BD%D0%B8%D0%BA%D0%B0-%D0%9F%D0%BE%D1%82%D0%BE%D1%86%D0%BA%D0%B8-1747196675544822/" target="_blank">
                                                             <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
-                                                        </a>
+                                                        </a-->
                                                     </div>
 		                            <div class="clear"></div>
 			                        </div>
@@ -422,7 +461,7 @@
 			                        		<div class="share-wrap">
 				                        		<span class="share-title">Поделиться:</span>
 					                            <div class="social-networks">
-													<xsl:value-of select="$conf//property[@name='social_networks']/value" disable-output-escaping="yes"/>
+                                                                        <xsl:value-of select="$conf//property[@name='social_networks']/value" disable-output-escaping="yes"/>
 					                            </div>
 			                        		</div>
 			                           </noindex>
@@ -445,14 +484,14 @@
 											<br/>
 
 											<xsl:if test="$conf//property[@name='telephone']/value">
-			                                    <a umi:field-name="telephone" umi:object-id="{$conf//object/@id}" target="_blank" value="{$conf//property[@name='telephone']/value}" href="tel:{$conf//property[@name='telephone']/value}">
+			                                    <a umi:field-name="telephone" umi:object-id="{$conf//object/@id}" target="_blank" value="{$conf//property[@name='telephone']/value}" href="tel:{translate($conf//property[@name='telephone']/value, ' ', '')}">
 													<xsl:value-of select="$conf//property[@name='telephone']/value" />
 			                                    </a>,
 			                                    <br/>
 											</xsl:if>
 
 											<xsl:if test="$conf//property[@name='telephone2']/value">
-			                                    <a umi:field-name="telephone2" umi:object-id="{$conf//object/@id}" target="_blank" value="{$conf//property[@name='telephone2']/value}" href="tel:{$conf//property[@name='telephone2']/value}">
+			                                    <a umi:field-name="telephone2" umi:object-id="{$conf//object/@id}" target="_blank" value="{$conf//property[@name='telephone2']/value}" href="tel:{translate($conf//property[@name='telephone2']/value, ' ', '')}">
 													<xsl:value-of select="$conf//property[@name='telephone2']/value" />
 			                                    </a>,
 			                                    <br/>
@@ -472,55 +511,56 @@
                                                                                         
 		                                </p>
 
-			                            <p>
-			                                <a href="{document(concat('udata://content/get_page_url/', $sitemapId,'/'))/udata}" class="site-map" umi:element-id="{$sitemapId}" umi:field-name="h1">
-												<xsl:value-of select="document(concat('upage://', $sitemapId, '.h1'))//udata//value"/>
-			                                </a>
-			                            </p>
 
-										<p class="designer_info">
-											<xsl:if test="$conf//property[@name='designer_logo']/value">
-												<span class="designer_logo">
-													<img alt="{$conf//property[@name='designer']/value}" src="{document(concat('udata://system/makeThumbnail/(',substring($conf//property[@name='designer_logo']/value,2),')/15/(auto)'))//src}"/>
-												</span>
-											</xsl:if>
+                                                <p class="designer_info">
+                                                        <xsl:if test="$conf//property[@name='designer_logo']/value">
+                                                            <a href="{$conf//property[@name='designer_link']/value}">
+                                                                <span class="designer_logo">
+                                                                    <img alt="{$conf//property[@name='designer']/value}" src="{document(concat('udata://system/makeThumbnail/(',substring($conf//property[@name='designer_logo']/value,2),')/200/(auto)'))//src}"/>
+                                                                </span>
+                                                            </a>
+                                                        </xsl:if>
 
-											<xsl:if test="$conf//property[@name='designer']/value">
-												<span>Создание сайта – </span>
-												<a href="{$conf//property[@name='designer_link']/value}">
-													<xsl:value-of select="$conf//property[@name='designer']/value"/>
-												</a>
-												<span>
-													<xsl:value-of select="$conf//property[@name='designer_year']/value"/>
-												</span>
-												<br/>
-											</xsl:if>
+                                                        <!--xsl:if test="$conf//property[@name='designer']/value">
+                                                                <span>Создание сайта – </span>
+                                                                <a href="{$conf//property[@name='designer_link']/value}">
+                                                                        <xsl:value-of select="$conf//property[@name='designer']/value"/>
+                                                                </a>
+                                                                <span>
+                                                                        <xsl:value-of select="$conf//property[@name='designer_year']/value"/>
+                                                                </span>
+                                                                <br/>
+                                                        </xsl:if>
 
-											<xsl:if test="$conf//property[@name='umi_prefix']/value">
-												<span umi:object-id='{$conf//object/@id}' umi:field-name='umi_prefix'>
-													<xsl:value-of select="$conf//property[@name='umi_prefix']/value"/>
-												</span>&nbsp;
-											</xsl:if>
-											<xsl:if test="$conf//property[@name='umi']/value">
-												<a href="{$conf//property[@name='umi_link']/value}" umi:object-id='{$conf//object/@id}' umi:field-name='umi'>
-													<xsl:value-of select="$conf//property[@name='umi']/value"/>
-												</a>
-											</xsl:if>
-										</p>
+                                                        <xsl:if test="$conf//property[@name='umi_prefix']/value">
+                                                                <span umi:object-id='{$conf//object/@id}' umi:field-name='umi_prefix'>
+                                                                        <xsl:value-of select="$conf//property[@name='umi_prefix']/value"/>
+                                                                </span>&nbsp;
+                                                        </xsl:if>
+                                                        <xsl:if test="$conf//property[@name='umi']/value">
+                                                                <a href="{$conf//property[@name='umi_link']/value}" umi:object-id='{$conf//object/@id}' umi:field-name='umi'>
+                                                                        <xsl:value-of select="$conf//property[@name='umi']/value"/>
+                                                                </a>
+                                                        </xsl:if-->
+                                                </p>
 			                        </div>
 			                    </div>
-								<div class="row hidden-xs">
-									<div class="col-md-2 col-sm-2 text-center copyright">
-										<xsl:text>© </xsl:text>
-										<span umi:object-id="{$conf//object/@id}" umi:field-name="foundation_year">
-											<xsl:value-of select="$conf//property[@name='foundation_year']/value"/>
-										</span>
-										<xsl:text> </xsl:text>
-										<span umi:object-id="{$conf//object/@id}" umi:field-name="company_name">
-											<xsl:value-of select="$conf//property[@name='footer_company_name']/value"/>
-										</span>
-									</div>
-								</div>
+                                            <div class="row hidden-xs">
+                                                    <div class="col-md-2 col-sm-2 text-center copyright">
+                                                            <xsl:text>© </xsl:text>
+                                                            <span umi:object-id="{$conf//object/@id}" umi:field-name="foundation_year">
+                                                                    <xsl:value-of select="$conf//property[@name='foundation_year']/value"/>
+                                                            </span>
+                                                            <xsl:text> </xsl:text>
+                                                            <span umi:object-id="{$conf//object/@id}" umi:field-name="company_name">
+                                                                    <xsl:value-of select="$conf//property[@name='footer_company_name']/value"/>
+                                                            </span>
+                                                    </div>
+                                            </div>
+                                            <div class="row hidden-xs">
+                                                Все материалы данного сайта являются объектами авторского права. Запрещается распространение, копирование, любое использование информации и объектов сайта без предварительного согласия правообладателя. 
+                                                <br />ЗАЩИЩЕНО ЗАКОНОМ РОССИЙСКОЙ ФЕДЕРАЦИИ ОТ 09.07.93Г. №5351-1 “ОБ АВТОРСКОМ ПРАВЕ И СМЕЖНЫХ ПРАВАХ” (с изменениями от 19 июля 1995 г., 20 июля 2004 г.)
+                                            </div>
 			                </div>
 			            </div>
 			        </footer>
